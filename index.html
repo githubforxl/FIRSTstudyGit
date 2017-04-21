@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">这是一个跨域请求，点击获取天气信息</button>
+		<script>
+			var oBt=document.getElementById("btn");
+			oBt.onclick=function(){
+				var oScript=document.createElement("script");
+				oScript.src="js/weather.js?city=cd&callback=test";
+				document.body.appendChild(oScript);
+			}
+			function test(a) {
+				console.log(a);
+			}
+		</script>
+	</body>
+</html>
